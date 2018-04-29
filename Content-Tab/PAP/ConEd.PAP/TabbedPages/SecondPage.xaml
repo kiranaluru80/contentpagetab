@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ConEd.PAP.TabbedPages.SecondPage">
+	<RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                <ListView x:Name="lstDDT" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout x:Name="stkDataT" Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="StartAndExpand" Padding="5,5,5,2">
+                                        <Image x:Name="imgFavouriteT" Source="{Binding ImageSource}" HorizontalOptions="End" VerticalOptions="Start" AbsoluteLayout.LayoutBounds="0.25, 0.25, 0, 0 ">
+                                            <!--<Image.GestureRecognizers>
+                                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference TheDDE}" CommandParameter="{Binding DocName}" />
+                                            </Image.GestureRecognizers>-->
+                                        </Image>
+                                        <StackLayout HorizontalOptions="FillAndExpand">
+                                            <Label x:Name="lblDocName" Text="{Binding DocName}" FontSize="Small" VerticalOptions="FillAndExpand" />
+                                            <Grid Grid.Row="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding ModifiedDate}" FontSize="Micro" HorizontalTextAlignment="Start" Grid.Row="1" TextColor="Gray" />
+                                                <Label Text="{Binding ModifiedBy}" FontSize="Micro" HorizontalTextAlignment="End" Grid.Row="1" TextColor="Gray" />
+                                            </Grid>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <BoxView HeightRequest="1" Color="LightGray" VerticalOptions="FillAndExpand" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout BackgroundColor="#90000000" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="activityIndicatorLayout" IsVisible="false" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}">
+            <ActivityIndicator Color="White" IsVisible="true" IsRunning="true" HorizontalOptions="Center" VerticalOptions="FillAndExpand" x:Name="actIndicator" />
+        </StackLayout>
+    </RelativeLayout>
+</ContentPage>

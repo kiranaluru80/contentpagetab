@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            xmlns:local="clr-namespace:ConEd.PAP;assembly=ConEd.PAP"             
+             x:Class="ConEd.PAP.Views.ViewDocument">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="ConedLogo.png" Text="Configuration"  Priority="0"  />
+    </ContentPage.ToolbarItems>-->
+    <!--<StackLayout  >
+        <Label Text="Policies And Procedures" HorizontalOptions="Center" TextColor="Black" FontSize="20" FontAttributes="Bold"></Label>
+        
+        <local:CustomWebView x:Name="cwv" Uri="CEHSP.pdf" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+    </StackLayout>-->
+    <ContentPage.Content>
+     <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+           <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+       
+    <Grid RowSpacing="0" VerticalOptions = "FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <!--  row background colors  -->
+        <BoxView Grid.Row="0" Color="#3B9BD7" IsVisible = "false" />
+        <BoxView Grid.Row="1" Color="#F1F2F2" />
+        <BoxView Grid.Row="2" Color="#3A444D" />
+
+<!--        <Button x:Name="btnBack" Text="&lt;" Clicked="btnBack_Clicked" TextColor="Black" FontSize="Large" HorizontalOptions="Start" />
+-->        <Label x:Name="lblVDTitle" TextColor="Black" IsVisible="false" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <Grid Grid.Row="1"  >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout  >
+                <!--<Label Text="Policies And Procedures" HorizontalOptions="Center" TextColor="Black" FontSize="20" FontAttributes="Bold"></Label>-->
+               <ProgressBar  Progress="0.2" IsVisible="true" HorizontalOptions="FillAndExpand" x:Name="activity_indicator"  />
+                <local:CustomWebView  x:Name="cwv" Uri="CEHSP.pdf" HorizontalOptions="FillAndExpand" BackgroundColor="Maroon" VerticalOptions="FillAndExpand" />
+            </StackLayout>
+          </Grid>
+
+       <Grid Grid.Row="2"    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"  />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <!--<ColumnDefinition Width="*" />-->
+            </Grid.ColumnDefinitions>
+            <StackLayout  x:Name="stkFavCancel" Padding="10,5,5,5" WidthRequest = "100" HorizontalOptions="Start">
+                <Button x:Name="btnBackB" Text="Cancel"  FontSize="Medium" HorizontalOptions="Start" TextColor="#FFFFFF" Grid.Row="1"   />
+                
+            </StackLayout>
+            <StackLayout Padding="5,5,10,5" WidthRequest ="30" HorizontalOptions="EndAndExpand">
+                <Button x:Name="btnViewFav" HorizontalOptions="EndAndExpand"   Image="fav_gray.png" Clicked="btnViewFav_Clicked" Grid.Row="1"  />
+            </StackLayout>
+        </Grid>
+    </Grid>
+                     </StackLayout>
+                </StackLayout>
+
+                            <StackLayout BackgroundColor="#90000000" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  x:Name="activityIndicatorLayout" IsVisible="false"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}">
+                <Frame Padding ="5" HasShadow ="false" Margin ="20,90,20,20" HorizontalOptions ="FillAndExpand" VerticalOptions ="Center">
+              <StackLayout Orientation ="Vertical" Padding ="20" HorizontalOptions ="FillAndExpand" VerticalOptions ="Center" BackgroundColor ="White">
+                <Label Text ="Are you sure to save this pdf to your favorite list?"/>
+                <Label FontSize ="12" Text ="Are you sure to save this pdf to your favorite list? adlkjad adlad asdhaod adaidh."/>
+                <StackLayout x:Name="nobtnRef" Padding ="5" Margin = "10" BackgroundColor ="#9B9B9B" Orientation ="Vertical" Spacing ="5">
+                   <Label Text ="NO," HorizontalTextAlignment ="Center" TextColor ="White"/>
+                   <Label Text ="not this time" HorizontalTextAlignment ="Center" TextColor ="White" FontSize ="12"/>
+                </StackLayout>
+
+                 <StackLayout x:Name="yesbtnref" Padding ="5" Margin = "10" BackgroundColor ="#115C92" Orientation ="Vertical" Spacing ="5">
+                   <Label Text ="YES," HorizontalTextAlignment ="Center" TextColor ="White"/>
+                   <Label Text ="I will to view it offline" HorizontalTextAlignment ="Center" TextColor ="White" FontSize ="12"/>
+                </StackLayout>
+                    
+            </StackLayout>
+                </Frame>
+    </StackLayout>
+         <StackLayout BackgroundColor="#90000000" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="StackLoadingRef" IsVisible="true" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}">
+                <ActivityIndicator Color="Black" IsVisible="true" IsRunning="true" HorizontalOptions="Center" VerticalOptions="FillAndExpand" x:Name="actIndicator" />
+            </StackLayout>
+               </RelativeLayout> 
+             
+        </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{E1BF9CF3-818F-4B50-B499-F37FCD68989A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ConEd.PAP/Views/DDENew.xaml">
+    <Files>
+      <File FileName="ConEd.PAP/Views/DDENew.xaml.cs" Line="41" Column="13" />
+      <File FileName="ConEd.PAP/Views/DocumentTypes.xaml.cs" Line="221" Column="26" />
+      <File FileName="ConEd.PAP/TabbedPages/FirstPage.xaml.cs" Line="14" Column="31" />
+      <File FileName="ConEd.PAP/obj/Debug/ConEd.PAP.TabbedPages.FirstPage.xaml.g.cs" Line="14" Column="180" />
+      <File FileName="ConEd.PAP/TabbedPages/FirstPage.xaml" Line="6" Column="43" />
+      <File FileName="ConEd.PAP/TabbedPages/FourthPage.xaml" Line="46" Column="1" />
+      <File FileName="ConEd.PAP/TabbedPages/ThirdPage.xaml" Line="46" Column="1" />
+      <File FileName="ConEd.PAP/Views/DDENew.xaml" Line="8" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/TabbedPageDemoPage.xaml.cs" relfile="ConEd.PAP/Views/TabbedPageDemoPage.xaml.cs" line="15" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/SearchItemsListPage.xaml.cs" relfile="ConEd.PAP/Views/SearchItemsListPage.xaml.cs" line="248" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/ViewModels/FavoritesViewModel.cs" relfile="ConEd.PAP/ViewModels/FavoritesViewModel.cs" line="29" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/iOS/ExceptionalLogging_iOS/NLogManager.cs" relfile="iOS/ExceptionalLogging_iOS/NLogManager.cs" line="104" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/DDE.xaml.cs" relfile="ConEd.PAP/Views/DDE.xaml.cs" line="86" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/Favorites.xaml.cs" relfile="ConEd.PAP/Views/Favorites.xaml.cs" line="41" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/ViewDocument.xaml.cs" relfile="ConEd.PAP/Views/ViewDocument.xaml.cs" line="134" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/ViewDocument.xaml.cs" relfile="ConEd.PAP/Views/ViewDocument.xaml.cs" line="139" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/ViewModels/CommonViewModel.cs" relfile="ConEd.PAP/ViewModels/CommonViewModel.cs" line="43" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/ViewModels/CommonViewModel.cs" relfile="ConEd.PAP/ViewModels/CommonViewModel.cs" line="45" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/ViewModels/CommonViewModel.cs" relfile="ConEd.PAP/ViewModels/CommonViewModel.cs" line="121" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/ViewModels/CommonViewModel.cs" relfile="ConEd.PAP/ViewModels/CommonViewModel.cs" line="53" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/DDE.xaml.cs" relfile="ConEd.PAP/Views/DDE.xaml.cs" line="139" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/DDENew.xaml.cs" relfile="ConEd.PAP/Views/DDENew.xaml.cs" line="42" column="33" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/DDENew.xaml.cs" relfile="ConEd.PAP/Views/DDENew.xaml.cs" line="16" column="1" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/Views/DDENew.xaml.cs" relfile="ConEd.PAP/Views/DDENew.xaml.cs" line="21" column="45" />
+      <Breakpoint file="/Users/ravikiranreddy/Downloads/PAP-log-dec28-4/PAP-log-dec27/PAP-logging/PAP 2 2-SearchUpdated 2/PAP/ConEd.PAP/TabbedPages/FirstPage.xaml.cs" relfile="ConEd.PAP/TabbedPages/FirstPage.xaml.cs" line="14" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>Droid/ConEd.PAP.Droid.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.ConEd.PAP.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D93C4D9C-6BC3-4614-8F47-6511184A1640" />
+</Properties>

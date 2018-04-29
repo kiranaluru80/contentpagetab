@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ConEd.PAP.Views.DocumentDetails"
+             Title="CEHSP"
+             x:Name="DD"  >
+
+    <Grid RowSpacing="0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <!--<RowDefinition Height="50" />-->
+        </Grid.RowDefinitions>
+
+        <!--  row background colors  -->
+        <BoxView Grid.Row="0" Color="#43AEE7"  />
+        <BoxView Grid.Row="1" Color="#43AEE7" />
+        <BoxView Grid.Row="2" Color="#F1F2F2" />
+       
+
+        <Button x:Name="btnBack" Text="&lt;" Clicked="btnBack_Clicked" TextColor="Black" FontSize="Large" HorizontalOptions="Start" />
+        <Label x:Name="lblDDTitle" TextColor="Black" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" />
+
+
+        <Grid Grid.Row="1"    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"   />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Administrative" Grid.Row="1" Grid.Column="0" TextColor="White"  FontSize = "15" HorizontalTextAlignment="Center" VerticalOptions="Center"   >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer      Tapped="TapGestureRecognizer_Tapped_1"                        NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Environmental" Grid.Row="1" Grid.Column="1" TextColor="White"  FontSize = "15" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+            <Label Text="Safety" Grid.Row="1" Grid.Column="2" TextColor="White"  FontSize = "15" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="2"  >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout  VerticalOptions="FillAndExpand">
+                <ContentView x:Name="overlay" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  AbsoluteLayout.LayoutFlags="All" IsVisible="False" BackgroundColor="#C0808080" Padding="10, 0">
+                    <ActivityIndicator x:Name="indicator" WidthRequest="110" HeightRequest="70" IsRunning="True" IsVisible="True" Color="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                </ContentView>
+
+                <ListView x:Name="lstDD" IsGroupingEnabled="True" ItemsSource="{Binding DocumentTypes}" SeparatorVisibility="None"  ItemAppearing="lstDD_ItemAppearing" RowHeight="60"   >
+                    <ListView.GroupHeaderTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout x:Name="stkTap" Orientation="Horizontal" HorizontalOptions="Fill"  >
+                                    <Image x:Name="imgAccordian" Source="plusIcon.png" />
+                                    <ContentView Padding="10,0,0,0">
+                                        <Label Text="{Binding Key.DocumentType.DocumentTypeTitle}" VerticalOptions="Center"   />
+                                    </ContentView>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="tapGst" Command="{Binding Source={x:Reference DD}, Path=BindingContext.HeaderSelectedCommand}" CommandParameter="{Binding .}" Tapped="TapGestureRecognizer_Tapped"  />
+
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.GroupHeaderTemplate>
+                    <ListView.ItemTemplate >    
+
+
+                        <DataTemplate >
+                    <ViewCell >
+                        <StackLayout x:Name="stkData" Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="StartAndExpand"   >        
+                              <Image x:Name="imgFavourite" Source="fav_default.png" HorizontalOptions="End" VerticalOptions="Start" AbsoluteLayout.LayoutBounds="0.25, 0.25, 0, 0 ">
+                                  <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ImgFavourite_Tapped" NumberOfTapsRequired="1" Command="{Binding Source={x:Reference DD}" CommandParameter="{Binding DocumentItemTitle}" />
+                                  </Image.GestureRecognizers>
+                              </Image>
+                              <StackLayout   >
+                                    <Label x:Name="lblDocName" Text = "{Binding DocumentItemTitle}" FontSize="Small" />           
+                                    <Label Text = "{Binding ModifiedDate}" FontSize="Small" />  
+                   
+                              </StackLayout>
+                                        <!--<StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="ImgFavourite_Tapped" NumberOfTapsRequired="1" Command="{Binding Source={x:Reference DD}" CommandParameter="{Binding DocumentItemTitle}"/>
+                                        </StackLayout.GestureRecognizers>-->
+
+                         </StackLayout>                     
+                    </ViewCell>
+                 </DataTemplate>
+                           
+
+                    </ListView.ItemTemplate>       
+        
+    </ListView>
+                <!--<ContentView x:Name="overlay" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  AbsoluteLayout.LayoutFlags="All" IsVisible="False" BackgroundColor="#C0808080" Padding="10, 0">
+                    <ActivityIndicator x:Name="indicator" WidthRequest="110" HeightRequest="70" IsRunning="True" IsVisible="True" Color="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                </ContentView>
+                <ActivityIndicator x:Name="indicator" WidthRequest="110" HeightRequest="70" IsRunning="False" IsVisible="False" Color="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->
+            </StackLayout>
+
+        </Grid>
+
+        <!--<Grid Grid.Row="2"    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"  />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image  Source="bottomMenu.png" Aspect="AspectFill"  />
+        </Grid>-->
+    </Grid>
+</ContentPage>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ConEd.PAP" xmlns:controls="clr-namespace:ConEd.PAP.Controls;assembly=ConEd.PAP" x:Class="ConEd.PAP.Views.SearchByCategoryPage" x:Name="sampREF" Title="{Binding Name}">
+	<ContentPage.Content>
+        <RelativeLayout>
+            <StackLayout BackgroundColor="#90000000" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  x:Name="activityIndicatorLayout" IsVisible="false"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}">
+      <ActivityIndicator Color="White" IsVisible="true" IsRunning="true" HorizontalOptions="Center" VerticalOptions="FillAndExpand" x:Name="actIndicator" />
+     </StackLayout>
+        <StackLayout BackgroundColor="#90000000" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  x:Name ="StacksearchRef" IsVisible="true"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}">
+        <StackLayout Padding ="10,15,10,15" HorizontalOptions ="FillAndExpand" VerticalOptions ="Start" Orientation ="Horizontal" BackgroundColor ="#43AEE7">
+                 <!--<Entry x:Name ="entrySearchRef" HeightRequest ="35" HorizontalOptions ="FillAndExpand" VerticalOptions ="FillAndExpand" Placeholder ="Search by Category"></Entry>-->
+                                         <controls:CustomSearchBar  x:Name="searchBarRef" BackgroundColor ="Transparent" HeightRequest="32" WidthRequest="250" Placeholder ="search all docs here" HorizontalOptions ="FillAndExpand" VerticalOptions ="Center"/>
+                                         <Button x:Name ="cancelbtnRef" Text ="Cancel" IsVisible="false" BackgroundColor ="Transparent" TextColor ="Black" FontAttributes ="Bold"/>
+                    <!--<Button x:Name ="searchbtnRef" Text ="search" IsVisible="false" BackgroundColor ="Transparent" TextColor ="Black" FontAttributes ="Bold"/>-->
+                 
+                </StackLayout>
+<!--                 <StackLayout Margin="15">
+--><!--        <SearchBar x:Name = "searchRef"/>
+-->        <ListView x:Name="listViewDocsRef" BackgroundColor="White" HasUnevenRows="true" IsPullToRefreshEnabled="true" IsVisible = "false">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" HeightRequest="60" WidthRequest="570" VerticalOptions = "Center">
+                                    <Label Text="{Binding DocName}" FontSize="Small" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+<!--                        </StackLayout>
+-->     </StackLayout>
+            </RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>

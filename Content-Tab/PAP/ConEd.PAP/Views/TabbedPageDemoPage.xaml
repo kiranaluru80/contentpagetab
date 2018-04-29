@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            x:Class="ConEd.PAP.Views.TabbedPageDemoPage">
+    <TabbedPage.Resources>
+        <!--<ResourceDictionary>
+            <local:NonNullToBooleanConverter x:Key="booleanConverter" />
+        </ResourceDictionary>-->
+    </TabbedPage.Resources>
+    <TabbedPage.ItemTemplate>
+        <DataTemplate>
+            <ContentPage Title="{Binding Name}"   >
+                <ListView ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement"
+              RowHeight="60">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="8">
+                                    <Label Text="{Binding Make}"
+                               FontAttributes="Bold" />
+                                    <Label Text="{Binding YearOfModel}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </ContentPage>
+           
+
+        </DataTemplate>
+    </TabbedPage.ItemTemplate>
+</TabbedPage>

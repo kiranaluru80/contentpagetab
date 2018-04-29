@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prism.DryIoc.Forms</name>
+    </assembly>
+    <members>
+        <member name="T:Prism.DryIoc.DryIocExtensions">
+            <summary>
+            Extension methods to register a <see cref="T:Xamarin.Forms.Page"/> with <see cref="T:Prism.Navigation.PageNavigationRegistry"/> using <see cref="T:DryIoc.IContainer"/>
+            </summary>
+        </member>
+        <member name="M:Prism.DryIoc.DryIocExtensions.RegisterTypeForNavigation``1(DryIoc.IContainer,System.String)">
+            <summary>
+            Registers a Page for navigation.
+            </summary>
+            <typeparam name="TView">The Type of Page to register</typeparam>
+            <param name="name">The unique name to register with the Page</param>
+        </member>
+        <member name="M:Prism.DryIoc.DryIocExtensions.RegisterTypeForNavigation(DryIoc.IContainer,System.Type,System.String)">
+            <summary>
+            Registers a Page for navigation
+            </summary>
+            <param name="container"><see cref="!:IUnityContainer"/> used to register type for Navigation.</param>
+            <param name="viewType">The type of Page to register</param>
+            <param name="name">The unique name to register with the Page</param>
+            <returns><see cref="!:IUnityContainer"/></returns>
+        </member>
+        <member name="M:Prism.DryIoc.DryIocExtensions.RegisterTypeForNavigation``2(DryIoc.IContainer,System.String)">
+            <summary>
+            Registers a Page for navigation.
+            </summary>
+            <typeparam name="TView">The Type of Page to register</typeparam>
+            <typeparam name="TViewModel">The ViewModel to use as the unique name for the Page</typeparam>
+        </member>
+        <member name="M:Prism.DryIoc.DryIocExtensions.RegisterTypeForNavigationOnPlatform``2(DryIoc.IContainer,System.String,System.Type,System.Type,System.Type,System.Type,System.Type)">
+            <summary>
+            Registers a Page for navigation based on the current Device OS using a shared ViewModel
+            </summary>
+            <typeparam name="TView">Default View Type to be shared across multiple Device Operating Systems if they are not specified directly.</typeparam>
+            <typeparam name="TViewModel">Shared ViewModel Type</typeparam>
+            <param name="container"><see cref="T:DryIoc.IContainer"/> used to register type for Navigation.</param>
+            <param name="name">The unique name to register with the Page. If left empty or null will default to the ViewModel root name. i.e. MyPageViewModel => MyPage</param>
+            <param name="androidView">Android Specific View Type</param>
+            <param name="iOSView">iOS Specific View Type</param>
+            <param name="otherView">Other Platform Specific View Type</param>
+            <param name="windowsView">Windows Specific View Type</param>
+            <param name="winPhoneView">Windows Phone Specific View Type</param>
+        </member>
+        <member name="M:Prism.DryIoc.DryIocExtensions.RegisterTypeForNavigationOnIdiom``2(DryIoc.IContainer,System.String,System.Type,System.Type,System.Type)">
+            <summary>
+            Registers a Page for navigation based on the Device Idiom using a shared ViewModel
+            </summary>
+            <typeparam name="TView">Default View Type to be used across multiple Idioms if they are not specified directly.</typeparam>
+            <typeparam name="TViewModel">The shared ViewModel</typeparam>
+            <param name="container"><see cref="T:DryIoc.IContainer"/> used to register type for Navigation.</param>
+            <param name="name">The common name used for Navigation. If left empty or null will default to the ViewModel root name. i.e. MyPageViewModel => MyPage</param>
+            <param name="desktopView">Desktop Specific View Type</param>
+            <param name="tabletView">Tablet Specific View Type</param>
+            <param name="phoneView">Phone Specific View Type</param>
+        </member>
+        <member name="T:Prism.DryIoc.Extensions.UnknownServiceResolverRule">
+            <summary>
+            Allow for resolving missing types using <see cref="T:Xamarin.Forms.DependencyService"/>
+            </summary>
+        </member>
+        <member name="M:Prism.DryIoc.Modularity.DryIocModuleInitializer.#ctor(DryIoc.IContainer)">
+            <summary>
+            Create a new instance of <see cref="T:Prism.DryIoc.Modularity.DryIocModuleInitializer"/> with <paramref name="container"/>
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:Prism.DryIoc.Modularity.DryIocModuleInitializer.CreateModule(System.Type)">
+            <summary>
+            Create the <see cref="T:Prism.Modularity.IModule"/> for <paramref name="moduleType"/> by resolving from <see cref="F:Prism.DryIoc.Modularity.DryIocModuleInitializer._container"/>
+            </summary>
+            <param name="moduleType">Type of module to create</param>
+            <returns>An isntance of <see cref="T:Prism.Modularity.IModule"/> for <paramref name="moduleType"/> if exists; otherwise <see langword="null" /></returns>
+        </member>
+        <member name="T:Prism.DryIoc.Navigation.DryIocPageNavigationService">
+            <summary>
+            Page navigation service for using DryIoc
+            </summary>
+        </member>
+        <member name="M:Prism.DryIoc.Navigation.DryIocPageNavigationService.#ctor(Prism.Common.IApplicationProvider,DryIoc.IContainer,Prism.Logging.ILoggerFacade)">
+            <summary>
+            Create a new instance of <see cref="T:Prism.DryIoc.Navigation.DryIocPageNavigationService"/> with <paramref name="container"/>
+            </summary>
+            <param name="applicationProvider">An instance of <see cref="T:Prism.Common.IApplicationProvider"/></param>
+            <param name="container">An instance of <see cref="T:DryIoc.IContainer"/></param>
+            <param name="logger">An instance of <see cref="T:Prism.Logging.ILoggerFacade"/></param>
+        </member>
+        <member name="M:Prism.DryIoc.Navigation.DryIocPageNavigationService.CreatePage(System.String)">
+            <summary>
+            Resolve a <see cref="T:Xamarin.Forms.Page"/> from <see cref="F:Prism.DryIoc.Navigation.DryIocPageNavigationService._container"/> for <paramref name="segmentName"/>
+            </summary>
+            <param name="segmentName">Page to resolve</param>
+            <returns>A <see cref="T:Xamarin.Forms.Page"/></returns>
+        </member>
+        <member name="T:Prism.DryIoc.PrismApplication">
+            <summary>
+            Application base class using DryIoc
+            </summary>
+        </member>
+        <member name="F:Prism.DryIoc.PrismApplication._navigationServiceKey">
+            <summary>
+            Service key used when registering the <see cref="T:Prism.DryIoc.Navigation.DryIocPageNavigationService"/> with the container
+            </summary>
+        </member>
+        <member name="M:Prism.DryIoc.PrismApplication.#ctor(Prism.DryIoc.IPlatformInitializer)">
+            <summary>
+            Create a new instance of <see cref="T:Prism.DryIoc.PrismApplication"/>
+            </summary>
+            <param name="platformInitializer">Class to initialize platform instances</param>
+            <remarks>
+            The method <see cref="!:IPlatformInitializer.RegisterTypes(IContainer)"/> will be called after <see cref="!:PrismApplication.RegisterTypes()"/> 
+            to allow for registering platform specific instances.
+            </remarks>
+        </member>
+        <member name="M:Prism.DryIoc.PrismApplication.CreateContainer">
+            <summary>
+            Create a default instance of <see cref="T:DryIoc.IContainer" /> with <see cref="T:DryIoc.Rules" /> created in
+            <see cref="M:Prism.DryIoc.PrismApplication.CreateContainerRules" />
+            </summary>
+            <returns>An instance of <see cref="T:DryIoc.IContainer" /></returns>
+        </member>
+        <member name="M:Prism.DryIoc.PrismApplication.CreateContainerRules">
+            <summary>
+            Create <see cref="T:DryIoc.Rules" /> to alter behavior of <see cref="T:DryIoc.IContainer" />
+            </summary>
+            <remarks>
+            Default rule is to consult <see cref="T:Xamarin.Forms.DependencyService" /> if the requested type cannot be inferred from
+            <see cref="T:DryIoc.Container" />
+            </remarks>
+            <returns>An instance of <see cref="T:DryIoc.Rules" /></returns>
+        </member>
+        <member name="M:Prism.DryIoc.PrismApplication.CreateNavigationService">
+            <summary>
+            Create instance of <see cref="T:Prism.Navigation.INavigationService"/>
+            </summary>
+            <remarks>
+            The <see cref="F:Prism.DryIoc.PrismApplication._navigationServiceKey"/> is used as service key when resolving
+            </remarks>
+            <returns>Instance of <see cref="T:Prism.Navigation.INavigationService"/></returns>
+        </member>
+    </members>
+</doc>
